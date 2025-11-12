@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git コマンド</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- https://prog-8.com/docs/git-env -->
+  <!-- このサイトの5まで -->
+  <div>
+    <h1>Mac GitHubセットアップ</h1>
+    <h2>ユーザー名・メールアドレスを設定</h2>
+    <code>git config --global user.name "ユーザー名"</code>
+    <code>git config --global user.email "メールアドレス"</code>
+    <p>""の部分を入れなければ設定したユーザー名やメールアドレスを見れる</p>
+  </div>
+
+  <div>
+    <h2>GitHubにSSHの設定をする</h2>
+    <h2>新しい SSH キーを生成する</h2>
+    <code>ls ~/.ssh</code>
+    <p>id_〇〇.pubというファイルが１つも表示されない場合</p>
+    <code>ssh-keygen -t ed25519 -C "GitHubに登録したメールアドレス"</code>
+    <h2>GitHub アカウントへSSHキーを追加する</h2>
+    <code>pbcopy < ~/.ssh/id_ed25519.pub</code>
+    <h2>SSHでGitHubに接続</h2>
+    <code>ssh -T git@github.com</code>
+  </div>
+
+
+  <div>
+    <h1>セットアップ後の使い方</h1>
+    <h2>1 変更をステージング</h2>
+    <code>git add .</code>
+    <h2>2 変更を記録</h2>
+    <code>git commit -m "変更内容の説明"</code>
+    <h2>3 Git Hubにアップロード</h2>
+    <code>git push</code>
+  </div>
+
+
+
+  <div>
+    通常フォルダファイルの確認
+    ls
+    隠しフォルダファイルの確認
+    ls -a
+    フォルダ移動
+    cd ***** (ファイルの場所)
+    mkdir ***** (ファイル名)
+  </div>
+
+
+  <div>
+    git init
+    git add ファイル名
+    git commit -m 'メッセージ'
+    git push -u origin main
+    addの取り消し(ファイルの追加)
+    git rm --cached ファイル名
+    addの取り消し(ファイルの変更)
+    git restore --staged ファイル名
+    ローカル作業の取り消し(最後にコミットした状態に復元)
+    git stash
+  </div>
+
+
+
+  <h2>コマンド一覧</h2>
+
+</body>
+</html>
